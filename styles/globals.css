@@ -13,9 +13,46 @@
     --foreground: #ededed;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+/* Scrollbar personalizado para navegadores WebKit */
+::-webkit-scrollbar {
+  width: 12px; /* Ancho de la barra de scroll vertical */
+  height: 12px; /* Altura de la barra de scroll horizontal */
+}
+
+::-webkit-scrollbar-track {
+  background: #000000; /* Color de fondo de la pista */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color del deslizador */
+  border-radius: 8px; /* Bordes redondeados */
+  border: 2px solid #00000000; /* Espacio entre el deslizador y la pista */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color del deslizador al pasar el cursor */
+}
+
+/* Compatibilidad para Firefox */
+* {
+  scrollbar-width: thin; /* Tamaño del scroll (delgado) */
+  scrollbar-color: #888 #00000000; /* Color del deslizador y la pista */
+}
+
+@font-face {
+  font-family: "jakarta-titulos";
+  src: url("/font/PlusJakartaSans-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "raleway";
+  src: url("/font/Lato-Regular.ttf");
 }

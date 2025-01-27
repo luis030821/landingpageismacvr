@@ -1,113 +1,88 @@
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
   return (
-    <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              pages/index.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen bg-gray-900 text-white">
+      <section className="relative">
+        <div className="h-screen w-full backdrop-blur-sm mx-auto flex flex-col md:flex-row items-center justify-center absolute top-0 z-20 px-10">
+          {/* Texto */}
+          <div className="text-center md:text-left space-y-3">
+            <h1 className="bg-gradient-to-bl bg-clip-text text-transparent font-extrabold bg-white/80 text-3xl leading-tight font-[jakarta-titulos]">
+              Ismac
+            </h1>
+            <h1 className=" bg-clip-text text-transparent font-extrabold bg-gradient-to-br from-pink-500 to-indigo-500 text-7xl leading-tight font-[jakarta-titulos]">
+              Agenda Virtual
+            </h1>
+            <p className="mt-4 bg-gradient-to-bl bg-clip-text text-transparent font-bold bg-white text-2xl sm:text-3xl font-[jakarta-titulos]">
+              Diseña el futuro con nosotros
+            </p>
+            <div className="flex justify-center">
+              <button
+                onClick={() => {
+                  router.push("/#agenda");
+                }}
+                className={`bg-gradient-to-br from-pink-500 to-indigo-500 group relative inline-flex items-center overflow-hidden    py-2 transition hover:scale-105 active:scale-95 focus:outline-none rounded-xl stroke-white px-5 mx-auto`}
+              >
+                <div className={`absolute inset-0.5 rounded-xl`} />
+                <div className="absolute bottom-0 left-1/2 h-1/3 w-4/5 -translate-x-1/2 bg-white/10 opacity-50 blur-md transition-all duration-500 group-hover:h-2/3 group-hover:opacity-100" />
+                <span className="text-white text-sm font-bold transition-all duration-200 flex items-center text-center mx-auto font-[jakarta-titulos]">
+                  Mira la agenda
+                </span>
+              </button>
+            </div>
+          </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+          {/* Imagen con animación */}
+          <div className="relative mt-8 md:mt-0">
+            <img
+              style={{ animationDuration: "5000ms" }}
+              src="/vr.webp"
+              alt="Realidad Virtual"
+              className="animate-bounce relative sm:w-[550px] rounded-lg transform transition-transform hover:scale-110"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        <div className="relative p-4 shadow-md z-10 min-h-screen flex justify-center items-center bg-gradient-to-r overflow-hidden">
+          <div
+            style={{ animationDuration: "5000ms" }}
+            className="absolute w-96 h-96 bg-gradient-to-br from-fuchsia-500 to-purple-300 rounded-full opacity-20 blur-xl animate-pulse -top-20 -left-20"
+          ></div>
+          <div
+            style={{ animationDuration: "5000ms" }}
+            className="absolute w-72 h-72 bg-gradient-to-br from-rose-400 to-purple-500 rounded-full opacity-25 blur-xl animate-spin-slow -bottom-20 -right-10"
+          ></div>
+        </div>
+      </section>
+
+      <section className="py-10">
+        <div className="space-y-5">
+          <div
+            className="w-full aspect-video bg-contain opacity-80"
+            style={{ backgroundImage: "url(/hero2.jpg)" }}
+          ></div>
+          <h1 className="text-center bg-clip-text text-transparent font-extrabold bg-white text-3xl leading-tight font-[jakarta-titulos]">
+            Mirando al pasado <br />
+            Pensando el futuro
+          </h1>
+        </div>
+      </section>
+      <section
+        id="agenda"
+        className="w-11/12 mx-auto bg-gradient-to-br from-fuchsia-500 to-purple-300 p-10 rounded-3xl mb-10"
+      >
+        <h1 className="font-[jakarta-titulos] text-black/70 text-2xl text-center">
+          Descubre nuestra agenda
+        </h1>
+        <div className="bg-white p-5 rounded-3xl">
+          <img src="/qr.png" alt="" />
+        </div>
+      </section>
+      <footer className="bg-gray-900 p-4 text-center">
+        <p className="font-[jakarta-titulos]">
+          &copy; {new Date().getFullYear()} Instituto tecnologico Ismac. Todos
+          los derechos reservados.
+        </p>
       </footer>
     </div>
   );
