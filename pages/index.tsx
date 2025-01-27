@@ -58,23 +58,25 @@ export default function Home() {
       <section className="py-10">
         <div className="space-y-5">
           <div
-            className="w-full aspect-video bg-contain opacity-80"
+            className="w-full max-w-[800px] rounded-3xl mx-auto aspect-video bg-contain opacity-80"
             style={{ backgroundImage: "url(/hero2.jpg)" }}
           ></div>
-          <h1 className="text-center bg-clip-text text-transparent font-extrabold bg-white text-3xl leading-tight font-[jakarta-titulos]">
-            Mirando al pasado <br />
-            Pensando el futuro
-          </h1>
+          <div className="py-40">
+            <h1 className="text-center bg-clip-text text-transparent font-extrabold bg-white text-3xl sm:text-7xl leading-tight font-[jakarta-titulos]">
+              Mirando al pasado <br />
+              Pensando el futuro
+            </h1>
+          </div>
         </div>
       </section>
       <section
         id="agenda"
-        className="w-11/12 mx-auto bg-gradient-to-br from-fuchsia-500 to-purple-300 p-10 rounded-3xl mb-10"
+        className="w-11/12 mx-auto bg-gradient-to-br from-pink-500 to-indigo-500 p-10 rounded-3xl mb-10 space-y-5"
       >
-        <h1 className="font-[jakarta-titulos] text-black/70 text-2xl text-center">
+        <h1 className="font-[jakarta-titulos] text-black/70 text-2xl text-center sm:text-5xl">
           Descubre nuestra agenda
         </h1>
-        <div className="bg-white p-5 rounded-3xl">
+        <div className="bg-white p-5 max-w-[500px] mx-auto rounded-3xl">
           <img src="/qr.png" alt="" />
         </div>
       </section>
